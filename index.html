@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complete Research Analyst Training</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-bg: #f9f9f9;
+            --gradient-bg: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: var(--light-bg);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .header {
+            text-align: center;
+            padding: 4rem 2rem;
+            background: var(--gradient-bg);
+            color: white;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        .module-card {
+            background: white;
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-left: 5px solid transparent;
+        }
+
+        .module-card:hover {
+            transform: translateY(-5px);
+            border-left-color: var(--secondary-color);
+        }
+
+        .module-content {
+            display: none;
+            padding: 2rem;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .badge {
+            background: var(--secondary-color);
+            color: white;
+            padding: 0.3rem 1rem;
+            border-radius: 20px;
+            float: right;
+        }
+
+        .topic-test {
+            margin: 1.5rem 0;
+            padding: 1.5rem;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 10px;
+            border-left: 4px solid var(--secondary-color);
+        }
+
+        .project-card {
+            background: #fff;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .progress-reminder {
+            background: #fff3cd;
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            text-align: center;
+            border: 2px solid #ffeeba;
+        }
+
+        .leaderboard-container {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            margin: 3rem 0;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+
+        th {
+            background: var(--primary-color);
+            color: white;
+        }
+
+        .medal {
+            font-size: 1.2em;
+            margin-right: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 10px;
+            }
+            .module-card {
+                padding: 1rem;
+            }
+            th, td {
+                padding: 0.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>📈 Complete Research Analyst Training Program</h1>
+            <p>Master SurveyCTO, Stata, and Real-World Data Analysis</p>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="leaderboard-container">
+            <h2>🏆 Live Leaderboard</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Name</th>
+                        <th>Score</th>
+                    </tr>
+                </thead>
+                <tbody id="leaderboard-body">
+                    <!-- Data loaded from Google Sheet -->
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Module 1 -->
+        <div class="module-card" onclick="toggleModule(1)">
+            <h2>📚 Module 1: Foundations of Research Data</h2>
+            <span class="badge">Click to expand</span>
+            <div class="module-content" id="module1">
+                <h3>Topics Covered</h3>
+                <ul class="topics-list">
+                    <li>Understanding Data Sources
+                        <ul>
+                            <li>Primary Data</li>
+                            <li>Secondary Data</li>
+                        </ul>
+                    </li>
+                    <div class="topic-test">
+                        <a href="https://your.surveycto.link/topic1-test" target="_blank">
+                            🧠 Test Your Knowledge: Data Sources
+                        </a>
+                        <span class="test-info">(5 questions | 10 points)</span>
+                    </div>
+
+                    <li>Primary vs Secondary Data
+                        <ul>
+                            <li>Advantages and limitations</li>
+                            <li>Ethical considerations</li>
+                            <li>Data quality assessment</li>
+                        </ul>
+                    </li>
+                    <div class="topic-test">
+                        <a href="https://your.surveycto.link/topic2-test" target="_blank">
+                            📝 Data Types Comparison Quiz
+                        </a>
+                        <span class="test-info">(Case study analysis | 15 points)</span>
+                    </div>
+
+                    <li>Data Sources in Global Health
+                        <ul>
+                            <li>Introduction to MICS</li>
+                            <li>Understanding DHS</li>
+                        </ul>
+                    </li>
+                    <div class="topic-test">
+                        <a href="https://your.surveycto.link/topic3-test" target="_blank">
+                            🌍 Global Health Data Quiz
+                        </a>
+                        <span class="test-info">(Image identification | 20 points)</span>
+                    </div>
+
+                    <li>Introduction to Survey Methodology
+                        <ul>
+                            <li>Sampling techniques</li>
+                            <li>Questionnaire design</li>
+                            <li>Data collection workflows</li>
+                        </ul>
+                    </li>
+                    <div class="topic-test">
+                        <a href="https://your.surveycto.link/topic4-test" target="_blank">
+                            📊 Methodology Mastery Test
+                        </a>
+                        <span class="test-info">(Multiple choice | 25 points)</span>
+                    </div>
+                </ul>
+
+                <div class="progress-reminder">
+                    <p>🎯 Complete all topic tests to unlock Module 2!</p>
+                    <small>Scores update automatically in <a href="#leaderboard">leaderboard</a></small>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 2 -->
+        <div class="module-card" onclick="toggleModule(2)">
+            <h2>🛠️ Module 2: CAPI Building (SurveyCTO)</h2>
+            <span class="badge">Click to expand</span>
+            <div class="module-content" id="module2">
+                <h3>Practical Skills You'll Learn</h3>
+                <ul>
+                    <li>SurveyCTO platform overview</li>
+                    <li>Account creation and team management</li>
+                    <li>Form design best practices</li>
+                    <li>Advanced features:
+                        <ul>
+                            <li>Data validation</li>
+                            <li>Calculated fields</li>
+                            <li>Media integration</li>
+                        </ul>
+                    </li>
+                </ul>
+                
+                <div class="topic-test">
+                    <a href="#" target="_blank">
+                        🧑💻 Hands-on Exercise: Build a Household Survey Form
+                    </a>
+                    <span class="test-info">(Step-by-step guide | 2-hour project)</span>
+                </div>
+                
+                <div class="progress-reminder">
+                    <p>✅ Required to proceed to Data Analysis modules</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 3 -->
+        <div class="module-card" onclick="toggleModule(3)">
+            <h2>📊 Module 3: Data Management & Analysis (STATA)</h2>
+            <span class="badge">Click to expand</span>
+            <div class="module-content" id="module3">
+                <h3>Master These Skills</h3>
+                <div class="project-card">
+                    <h4>Data Cleaning & Preparation</h4>
+                    <ul>
+                        <li>Handling missing values</li>
+                        <li>Variable recoding</li>
+                        <li>Data validation techniques</li>
+                    </ul>
+                </div>
+                
+                <div class="project-card">
+                    <h4>Statistical Analysis</h4>
+                    <ul>
+                        <li>Descriptive statistics</li>
+                        <li>Regression analysis</li>
+                        <li>Data visualization</li>
+                    </ul>
+                </div>
+                
+                <div class="topic-test">
+                    <a href="#" target="_blank">
+                        🔍 Real Data Cleaning Challenge
+                    </a>
+                    <span class="test-info">(DHS dataset | 15 tasks | 50 points)</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 4 -->
+        <div class="module-card" onclick="toggleModule(4)">
+            <h2>🌍 Module 4: Real-World Projects</h2>
+            <span class="badge">Click to expand</span>
+            <div class="module-content" id="module4">
+                <div class="project-card">
+                    <h3>Project 1: Child Malnutrition Analysis</h3>
+                    <p>📌 Using BDHS Data:</p>
+                    <ul>
+                        <li>Calculate stunting/wasting prevalence</li>
+                        <li>Identify risk factors</li>
+                        <li>Create regional comparisons</li>
+                    </ul>
+                    <div class="topic-test">
+                        <a href="#" target="_blank">
+                            📥 Download Project Brief
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Project 2: C-Section Delivery Study</h3>
+                    <p>📌 Using MICS Data:</p>
+                    <ul>
+                        <li>Analyze c-section trends</li>
+                        <li>Identify socioeconomic factors</li>
+                        <li>Create policy recommendations</li>
+                    </ul>
+                    <div class="topic-test">
+                        <a href="#" target="_blank">
+                            📥 Download Dataset
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Module 5 -->
+        <div class="module-card" onclick="toggleModule(5)">
+            <h2>💼 Module 5: Career Development</h2>
+            <span class="badge">Click to expand</span>
+            <div class="module-content" id="module5">
+                <div class="project-card">
+                    <h3>Professional Resume Building</h3>
+                    <ul>
+                        <li>Industry-standard formats</li>
+                        <li>Highlighting technical skills</li>
+                        <li>Showcasing projects</li>
+                    </ul>
+                    <div class="topic-test">
+                        <a href="#" target="_blank">
+                            📝 Download Resume Template
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Personal Website Development</h3>
+                    <ul>
+                        <li>HTML/CSS basics</li>
+                        <li>GitHub pages deployment</li>
+                        <li>Portfolio showcase</li>
+                    </ul>
+                    <div class="topic-test">
+                        <a href="#" target="_blank">
+                            🌐 Website Building Guide
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Module Toggle Function
+        function toggleModule(moduleNum) {
+            const content = document.getElementById(`module${moduleNum}`);
+            content.style.display = content.style.display === 'block' ? 'none' : 'block';
+        }
+
+        // Leaderboard Loader
+        async function loadLeaderboard() {
+            try {
+                const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSMF6FP1WUYv1mX9SWBzJsEl23he9E98fRgjFGllPmMMzAiMRePFKQa5CkHd8O9-N7jxSzu-s2Svree/pub?gid=0&single=true&output=csv');
+                const csvData = await response.text();
+                const rows = csvData.split('\n').slice(1);
+                
+                const tbody = document.getElementById('leaderboard-body');
+                tbody.innerHTML = '';
+                
+                rows.forEach((row, index) => {
+                    const [id, name, marks] = row.split(',');
+                    tbody.innerHTML += `
+                        <tr>
+                            <td>${index + 1} ${getMedal(index)}</td>
+                            <td>${name?.trim() || 'Participant'}</td>
+                            <td>${marks?.trim() || '0'}</td>
+                        </tr>
+                    `;
+                });
+            } catch (error) {
+                console.error('Error loading leaderboard:', error);
+            }
+        }
+
+        // Medal System
+        function getMedal(index) {
+            const medals = ['🥇', '🥈', '🥉'];
+            return index < 3 ? `<span class="medal">${medals[index]}</span>` : '';
+        }
+
+        // Initial Load
+        window.addEventListener('DOMContentLoaded', () => {
+            loadLeaderboard();
+            setInterval(loadLeaderboard, 300000); // Refresh every 5 minutes
+        });
+    </script>
+</body>
+</html>
