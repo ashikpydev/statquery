@@ -3,8 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Complete Research Analyst Training</title>
+    <title>Research Analyst Training Program</title>
     <style>
+        /* Base Mobile Styles */
         :root {
             --primary-color: #2c3e50;
             --secondary-color: #3498db;
@@ -13,137 +14,155 @@
             --gradient-bg: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
         }
 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
         body {
             font-family: 'Segoe UI', system-ui, sans-serif;
             line-height: 1.6;
-            margin: 0;
-            padding: 20px;
             background-color: var(--light-bg);
+            color: #333;
+            font-size: 16px;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 100%;
             margin: 0 auto;
+            padding: 15px;
         }
 
         .header {
             text-align: center;
-            padding: 4rem 2rem;
+            padding: 2rem 1rem;
             background: var(--gradient-bg);
             color: white;
-            border-radius: 15px;
-            margin: 2rem 0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            margin: 1rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
         }
 
         .module-card {
             background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
             cursor: pointer;
-            transition: all 0.3s ease;
-            border-left: 5px solid transparent;
-        }
-
-        .module-card:hover {
-            transform: translateY(-5px);
-            border-left-color: var(--secondary-color);
+            transition: transform 0.2s ease;
         }
 
         .module-content {
             display: none;
-            padding: 2rem;
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
+            padding: 1rem 0;
         }
 
         .badge {
+            display: inline-block;
+            padding: 0.25rem 0.75rem;
+            border-radius: 20px;
             background: var(--secondary-color);
             color: white;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            float: right;
+            font-size: 0.9em;
+            margin-top: 0.5rem;
         }
 
         .topic-test {
-            margin: 1.5rem 0;
-            padding: 1.5rem;
-            background: rgba(52, 152, 219, 0.1);
-            border-radius: 10px;
-            border-left: 4px solid var(--secondary-color);
-        }
-
-        .project-card {
-            background: #fff;
-            padding: 1.5rem;
-            border-radius: 10px;
             margin: 1rem 0;
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-        }
-
-        .progress-reminder {
-            background: #fff3cd;
-            padding: 1.5rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            text-align: center;
-            border: 2px solid #ffeeba;
+            padding: 1rem;
+            background: rgba(52, 152, 219, 0.1);
+            border-radius: 8px;
+            border-left: 4px solid var(--secondary-color);
         }
 
         .leaderboard-container {
             background: white;
-            padding: 2rem;
-            border-radius: 15px;
-            margin: 3rem 0;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            overflow-x: auto;
         }
 
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 1rem;
+            min-width: 300px;
         }
 
         th, td {
-            padding: 1rem;
+            padding: 12px;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
 
         th {
-            background: var(--primary-color);
+            background-color: var(--primary-color);
             color: white;
         }
 
-        .medal {
-            font-size: 1.2em;
-            margin-right: 0.5rem;
+        /* Tablet Styles */
+        @media (min-width: 768px) {
+            .container {
+                max-width: 90%;
+                padding: 20px;
+            }
+
+            .header {
+                padding: 3rem 2rem;
+                margin: 2rem 0;
+            }
+
+            .module-card {
+                padding: 1.5rem;
+            }
         }
 
-        @media (max-width: 768px) {
+        /* Desktop Styles */
+        @media (min-width: 1024px) {
             .container {
-                padding: 10px;
+                max-width: 1200px;
             }
-            .module-card {
-                padding: 1rem;
+
+            .header {
+                padding: 4rem 2rem;
             }
+        }
+
+        /* Mobile Optimizations */
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
             th, td {
-                padding: 0.75rem;
+                padding: 10px;
+                font-size: 0.9rem;
             }
+
+            .topic-test a {
+                word-break: break-word;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
-            <h1>📈 Complete Research Analyst Training Program</h1>
-            <p>Master SurveyCTO, Stata, and Real-World Data Analysis</p>
+            <h1>Research Data Analyst Training Program</h1>
+            <p>Master SurveyCTO, Stata, and DHS/MICS Analysis</p>
         </div>
 
         <!-- Leaderboard -->
@@ -224,11 +243,6 @@
                         <span class="test-info">(Multiple choice | 25 points)</span>
                     </div>
                 </ul>
-
-                <div class="progress-reminder">
-                    <p>🎯 Complete all topic tests to unlock Module 2!</p>
-                    <small>Scores update automatically in <a href="#leaderboard">leaderboard</a></small>
-                </div>
             </div>
         </div>
 
@@ -237,29 +251,19 @@
             <h2>🛠️ Module 2: CAPI Building (SurveyCTO)</h2>
             <span class="badge">Click to expand</span>
             <div class="module-content" id="module2">
-                <h3>Practical Skills You'll Learn</h3>
+                <h3>Topics Covered</h3>
                 <ul>
-                    <li>SurveyCTO platform overview</li>
-                    <li>Account creation and team management</li>
-                    <li>Form design best practices</li>
-                    <li>Advanced features:
-                        <ul>
-                            <li>Data validation</li>
-                            <li>Calculated fields</li>
-                            <li>Media integration</li>
-                        </ul>
-                    </li>
+                    <li>What is SurveyCTO?</li>
+                    <li>Creating SurveyCTO account</li>
+                    <li>Interface overview</li>
+                    <li>Form design basics</li>
+                    <li>Field testing procedures</li>
                 </ul>
-                
                 <div class="topic-test">
                     <a href="#" target="_blank">
-                        🧑💻 Hands-on Exercise: Build a Household Survey Form
+                        🧑💻 Build Your First Form
                     </a>
-                    <span class="test-info">(Step-by-step guide | 2-hour project)</span>
-                </div>
-                
-                <div class="progress-reminder">
-                    <p>✅ Required to proceed to Data Analysis modules</p>
+                    <span class="test-info">(Step-by-step guide | 30 points)</span>
                 </div>
             </div>
         </div>
@@ -269,30 +273,19 @@
             <h2>📊 Module 3: Data Management & Analysis (STATA)</h2>
             <span class="badge">Click to expand</span>
             <div class="module-content" id="module3">
-                <h3>Master These Skills</h3>
-                <div class="project-card">
-                    <h4>Data Cleaning & Preparation</h4>
-                    <ul>
-                        <li>Handling missing values</li>
-                        <li>Variable recoding</li>
-                        <li>Data validation techniques</li>
-                    </ul>
-                </div>
-                
-                <div class="project-card">
-                    <h4>Statistical Analysis</h4>
-                    <ul>
-                        <li>Descriptive statistics</li>
-                        <li>Regression analysis</li>
-                        <li>Data visualization</li>
-                    </ul>
-                </div>
-                
+                <h3>Topics Covered</h3>
+                <ul>
+                    <li>Data cleaning fundamentals</li>
+                    <li>STATA interface walkthrough</li>
+                    <li>Basic data manipulation</li>
+                    <li>Descriptive statistics</li>
+                    <li>Regression analysis</li>
+                </ul>
                 <div class="topic-test">
                     <a href="#" target="_blank">
-                        🔍 Real Data Cleaning Challenge
+                        🔍 Data Cleaning Challenge
                     </a>
-                    <span class="test-info">(DHS dataset | 15 tasks | 50 points)</span>
+                    <span class="test-info">(Real-world dataset | 50 points)</span>
                 </div>
             </div>
         </div>
@@ -302,34 +295,21 @@
             <h2>🌍 Module 4: Real-World Projects</h2>
             <span class="badge">Click to expand</span>
             <div class="module-content" id="module4">
-                <div class="project-card">
+                <div class="project">
                     <h3>Project 1: Child Malnutrition Analysis</h3>
-                    <p>📌 Using BDHS Data:</p>
                     <ul>
-                        <li>Calculate stunting/wasting prevalence</li>
-                        <li>Identify risk factors</li>
-                        <li>Create regional comparisons</li>
+                        <li>BDHS dataset analysis</li>
+                        <li>Nutritional status assessment</li>
+                        <li>Risk factor identification</li>
                     </ul>
-                    <div class="topic-test">
-                        <a href="#" target="_blank">
-                            📥 Download Project Brief
-                        </a>
-                    </div>
                 </div>
-                
-                <div class="project-card">
+                <div class="project">
                     <h3>Project 2: C-Section Delivery Study</h3>
-                    <p>📌 Using MICS Data:</p>
                     <ul>
-                        <li>Analyze c-section trends</li>
-                        <li>Identify socioeconomic factors</li>
-                        <li>Create policy recommendations</li>
+                        <li>MICS data analysis</li>
+                        <li>Trend analysis</li>
+                        <li>Policy recommendations</li>
                     </ul>
-                    <div class="topic-test">
-                        <a href="#" target="_blank">
-                            📥 Download Dataset
-                        </a>
-                    </div>
                 </div>
             </div>
         </div>
@@ -339,32 +319,18 @@
             <h2>💼 Module 5: Career Development</h2>
             <span class="badge">Click to expand</span>
             <div class="module-content" id="module5">
-                <div class="project-card">
-                    <h3>Professional Resume Building</h3>
-                    <ul>
-                        <li>Industry-standard formats</li>
-                        <li>Highlighting technical skills</li>
-                        <li>Showcasing projects</li>
-                    </ul>
-                    <div class="topic-test">
-                        <a href="#" target="_blank">
-                            📝 Download Resume Template
-                        </a>
-                    </div>
-                </div>
-                
-                <div class="project-card">
-                    <h3>Personal Website Development</h3>
-                    <ul>
-                        <li>HTML/CSS basics</li>
-                        <li>GitHub pages deployment</li>
-                        <li>Portfolio showcase</li>
-                    </ul>
-                    <div class="topic-test">
-                        <a href="#" target="_blank">
-                            🌐 Website Building Guide
-                        </a>
-                    </div>
+                <h3>Topics Covered</h3>
+                <ul>
+                    <li>Professional resume writing</li>
+                    <li>Portfolio development</li>
+                    <li>GitHub pages deployment</li>
+                    <li>Personal website creation</li>
+                </ul>
+                <div class="topic-test">
+                    <a href="#" target="_blank">
+                        🌐 Build Your Portfolio
+                    </a>
+                    <span class="test-info">(Template included | 40 points)</span>
                 </div>
             </div>
         </div>
@@ -375,43 +341,73 @@
         function toggleModule(moduleNum) {
             const content = document.getElementById(`module${moduleNum}`);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
+            if(content.style.display === 'block') {
+                content.style.animation = 'fadeIn 0.3s ease-out';
+            }
         }
-
-        // Leaderboard Loader
+        // Leaderboard Loader with Proper Ranking
         async function loadLeaderboard() {
             try {
                 const response = await fetch('https://docs.google.com/spreadsheets/d/e/2PACX-1vSMF6FP1WUYv1mX9SWBzJsEl23he9E98fRgjFGllPmMMzAiMRePFKQa5CkHd8O9-N7jxSzu-s2Svree/pub?gid=0&single=true&output=csv');
                 const csvData = await response.text();
                 const rows = csvData.split('\n').slice(1);
                 
+                // Process and sort data
+                const leaderboardData = rows.map(row => {
+                    const [id, name, marks] = row.split(',');
+                    return {
+                        id: id?.trim() || 'N/A',
+                        name: name?.trim() || 'Anonymous',
+                        marks: parseFloat(marks?.trim()) || 0
+                    };
+                }).sort((a, b) => b.marks - a.marks);
+
+                // Calculate ranks with tie handling
+                let currentRank = 1;
+                let previousMark = null;
+                let skip = 0;
+                
+                const rankedData = leaderboardData.map((user, index) => {
+                    if (user.marks === previousMark) {
+                        skip++;
+                    } else {
+                        currentRank = index + 1;
+                        previousMark = user.marks;
+                        skip = 0;
+                    }
+                    return { ...user, rank: currentRank };
+                });
+
+                // Update table
                 const tbody = document.getElementById('leaderboard-body');
                 tbody.innerHTML = '';
                 
-                rows.forEach((row, index) => {
-                    const [id, name, marks] = row.split(',');
-                    tbody.innerHTML += `
-                        <tr>
-                            <td>${index + 1} ${getMedal(index)}</td>
-                            <td>${name?.trim() || 'Participant'}</td>
-                            <td>${marks?.trim() || '0'}</td>
-                        </tr>
+                rankedData.forEach(user => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${user.rank}</td>
+                        <td>${user.name}</td>
+                        <td>${user.marks.toFixed(0)}</td>
                     `;
+                    tbody.appendChild(row);
                 });
+
             } catch (error) {
                 console.error('Error loading leaderboard:', error);
             }
-        }
-
-        // Medal System
-        function getMedal(index) {
-            const medals = ['🥇', '🥈', '🥉'];
-            return index < 3 ? `<span class="medal">${medals[index]}</span>` : '';
         }
 
         // Initial Load
         window.addEventListener('DOMContentLoaded', () => {
             loadLeaderboard();
             setInterval(loadLeaderboard, 300000); // Refresh every 5 minutes
+            
+            // Mobile touch optimization
+            if('ontouchstart' in window) {
+                document.querySelectorAll('.module-card').forEach(card => {
+                    card.style.cursor = 'pointer';
+                });
+            }
         });
     </script>
 </body>
